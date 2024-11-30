@@ -1,0 +1,92 @@
+<div>
+    <button routerLink="/Sach" >Quay lại</button>
+</div>
+<div class="btn-ds">
+  <button routerLink="/DanhSachMuonSach" >Danh sách mượn sách</button>
+</div>
+<div class="borrow-book-container">
+    <h2>Mượn Sách</h2>
+    
+    <form (ngSubmit)="onSubmit()" #borrowForm="ngForm" novalidate>
+
+      <div class="form-group">
+        <label for="thanhVienId">Mã Thành Viên:</label>
+        <input
+          type="number"
+          id="thanhVienId"
+          name="thanhVienId"
+          class="form-control"
+          [(ngModel)]="muonSach.thanhVienId"
+          required
+          placeholder="Nhập mã thành viên"
+          #thanhVienId="ngModel"
+        />
+
+        <div *ngIf="thanhVienId.invalid && thanhVienId.touched" class="text-danger">
+          Mã thành viên là bắt buộc!
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="tenThanhVien">Tên Thành Viên:</label>
+        <input
+          type="text"
+          id="tenThanhVien"
+          name="tenThanhVien"
+          class="form-control"
+          [(ngModel)]="muonSach.tenThanhVien"
+          required
+          placeholder="Nhập tên thành viên"
+          #tenThanhVien="ngModel"
+        />
+        <div *ngIf="tenThanhVien.invalid && tenThanhVien.touched" class="text-danger">
+          Tên thành viên là bắt buộc!
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="sachId">Mã Sách:</label>
+        <input
+          type="number"
+          id="sachId"
+          name="sachId"
+          class="form-control"
+          [(ngModel)]="muonSach.sachId"
+          required
+          placeholder="Nhập mã sách"
+          #sachId="ngModel"
+        />
+        <div *ngIf="sachId.invalid && sachId.touched" class="text-danger">
+          Mã sách là bắt buộc!
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ngayTraDuKien">Ngày Trả Dự Kiến:</label>
+        <input
+          type="date"
+          id="ngayTraDuKien"
+          name="ngayTraDuKien"
+          class="form-control"
+          [(ngModel)]="muonSach.ngayTraDuKien"
+          required
+          #ngayTraDuKien="ngModel"
+        />
+        <div *ngIf="ngayTraDuKien.invalid && ngayTraDuKien.touched" class="text-danger">
+          Ngày trả dự kiến là bắt buộc!
+        </div>
+      </div>
+    
+      <div class="btn">
+        <button type="submit" class="btn btn-primary" [disabled]="borrowForm.invalid">
+          Mượn Sách
+        </button>
+      </div>
+    </form>
+    
+
+    <div *ngIf="message" class="alert alert-info">
+      {{ message }}
+    </div>
+  </div>
+  

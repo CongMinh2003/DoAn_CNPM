@@ -1,0 +1,29 @@
+<div>
+  <button routerLink="/Sach" >Quay lại</button>
+</div>
+<div class="delete-book-container">
+    <h2>Xóa Sách</h2>
+    <form (ngSubmit)="onDelete()" #deleteForm="ngForm">
+      <div class="form-group">
+        <label for="tenSach">Tên Sách:</label>
+        <input
+          type="text"
+          id="tenSach"
+          name="tenSach"
+          class="form-control"
+          [(ngModel)]="tenSach"
+          required
+          placeholder="Nhập tên sách cần xóa"
+        />
+      </div>
+
+     <div class="btn">
+        <button type="submit" class="btn btn-danger">Xóa Sách</button>
+     </div>
+    </form>
+
+    <div *ngIf="message" class="alert alert-info">
+      {{ message }}
+    </div>
+  </div>
+  

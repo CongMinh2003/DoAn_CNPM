@@ -1,0 +1,49 @@
+<div >
+    <button routerLink="/Sach" >Quay lại</button>
+</div>
+<div class="btn-ds">
+  <button routerLink="/DanhSachTraSach" >Danh Sách Trả Sách</button>
+</div>
+<div class="container">
+    <h2>Trả Sách</h2>
+  
+    <form [formGroup]="traSachForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="muonId">Mã Mượn</label>
+        <input id="muonId" type="number" class="form-control" formControlName="muonId" placeholder="Nhập mã mượn">
+        <div *ngIf="traSachForm.get('muonId')?.invalid && traSachForm.get('muonId')?.touched" class="text-danger">
+          Mã mượn là bắt buộc.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="tenThanhVien">Tên Thành Viên</label>
+        <input id="tenThanhVien" type="text" class="form-control" formControlName="tenThanhVien" placeholder="Nhập tên thành viên">
+        <div *ngIf="traSachForm.get('tenThanhVien')?.invalid && traSachForm.get('tenThanhVien')?.touched" class="text-danger">
+          Tên thành viên là bắt buộc.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="ngayTra">Ngày Trả</label>
+        <input id="ngayTra" type="date" class="form-control" formControlName="ngayTra">
+        <div *ngIf="traSachForm.get('ngayTra')?.invalid && traSachForm.get('ngayTra')?.touched" class="text-danger">
+          Ngày trả là bắt buộc.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="tinhTrangSach">Tình Trạng Sách</label>
+        <input id="tinhTrangSach" type="text" class="form-control" formControlName="tinhTrangSach" placeholder="Nhập tình trạng sách">
+        <div *ngIf="traSachForm.get('tinhTrangSach')?.invalid && traSachForm.get('tinhTrangSach')?.touched" class="text-danger">
+          Tình trạng sách là bắt buộc.
+        </div>
+      </div>
+  
+      <div class="btn">
+        <button type="submit" class="btn btn-primary" [disabled]="traSachForm.invalid">Xác Nhận Trả Sách</button>
+      </div>
+    </form>
+    <p *ngIf="message" class="alert alert-info">{{ message }}</p>
+  </div>
+  

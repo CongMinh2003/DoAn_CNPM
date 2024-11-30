@@ -1,0 +1,47 @@
+<div>
+    <button routerLink="/MemberTV" >Quay lại</button>
+</div>
+
+<div class="update-member-container">
+    <h2>Cập Nhật Thông Tin Thành Viên</h2>
+    <form (ngSubmit)="onUpdate()" #updateMemberForm="ngForm">
+      <div class="form-group">
+        <label for="tenThanhVien">Tên Thành Viên:</label>
+        <input
+          type="text"
+          id="tenThanhVien"
+          name="tenThanhVien"
+          class="form-control"
+          [(ngModel)]="member.tenThanhVien"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="diaChi">Địa Chỉ:</label>
+        <input
+          type="text"
+          id="diaChi"
+          name="diaChi"
+          class="form-control"
+          [(ngModel)]="member.diaChi"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="form-control"
+          [(ngModel)]="member.email"
+          required
+        />
+      </div>
+      <div class="btn">
+        <button type="submit" class="btn btn-primary">Cập Nhật</button>
+      </div>
+    </form>
+  </div>
+  

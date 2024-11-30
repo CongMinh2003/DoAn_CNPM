@@ -1,0 +1,83 @@
+ <div>
+  <button routerLink="/Sach" >Quay lại</button>
+ </div>
+   <div  class="add-book-container">
+    <form (ngSubmit)="onSubmit()" #bookForm="ngForm">
+      <div class="form-group">
+        <label for="tenSach">Tên Sách:</label>
+        <input
+          type="text"
+          id="tenSach"
+          name="tenSach"
+          class="form-control"
+          [(ngModel)]="sach.tenSach"
+          required
+        />
+        <div *ngIf="errorMessages['tenSach']" class="text-danger">
+          {{ errorMessages['tenSach'] }}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="tacGia">Tác Giả:</label>
+        <input
+          type="text"
+          id="tacGia"
+          name="tacGia"
+          class="form-control"
+          [(ngModel)]="sach.tacGia"
+        />
+        <div *ngIf="errorMessages['tacGia']" class="text-danger">
+          {{ errorMessages['tacGia'] }}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="namXuatBan">Năm Xuất Bản:</label>
+        <input
+          type="number"
+          id="namXuatBan"
+          name="namXuatBan"
+          class="form-control"
+          [(ngModel)]="sach.namXuatBan"
+          min="0"
+        />
+        <div *ngIf="errorMessages['namXuatBan']" class="text-danger">
+          {{ errorMessages['namXuatBan'] }}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="theLoai">Thể Loại:</label>
+        <input
+          type="text"
+          id="theLoai"
+          name="theLoai"
+          class="form-control"
+          [(ngModel)]="sach.theLoai"
+        />
+        <div *ngIf="errorMessages['theLoai']" class="text-danger">
+          {{ errorMessages['theLoai'] }}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="soLuong">Số Lượng:</label>
+        <input
+          type="number"
+          id="soLuong"
+          name="soLuong"
+          class="form-control"
+          [(ngModel)]="sach.soLuong"
+          min="0"
+          required
+        />
+        <div *ngIf="errorMessages['soLuong']" class="text-danger">
+          {{ errorMessages['soLuong'] }}
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Thêm Sách</button>
+    </form>
+    
+   </div>

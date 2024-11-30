@@ -1,0 +1,53 @@
+<div>
+  <h1>Quản lý sách</h1>
+  <div class="actions">
+    <button routerLink="/Themsach">Thêm sách</button>
+    <button routerLink="/Xoasach" >Xóa sách</button>
+    <button routerLink="/Capnhatthongtinsach" >Cập nhật thông tin</button>
+    <!-- <div class="search-bar">
+      <input type="text" placeholder="Nhập tên sách" />
+      <button>Tìm kiếm</button>
+    </div> -->
+    <div class="search-bar">
+      <input type="text" [(ngModel)]="searchName" placeholder="Nhập tên sách" />
+      <button (click)="searchBooks()">Tìm kiếm</button>
+    </div>
+    
+    <div *ngIf="message" class="alert alert-danger">
+      {{ message }}
+    </div>
+    <div class="right-buttons" >
+      <button routerLink="/Muonsach" >Mượn sách</button>
+      <button routerLink="/Trasach" >Trả sách</button>
+    </div>
+  </div>
+  
+</div>
+
+  
+  <div *ngIf="sachList.length > 0">
+    <table>
+      <thead>
+        <tr>
+          <th>Tên Sách</th>
+          <th>Tác Giả</th>
+          <th>Năm Xuất Bản</th>
+          <th>Thể Loại</th>
+          <th>Số Lượng</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sach of sachList">
+          <td>{{ sach.tenSach }}</td>
+          <td>{{ sach.tacGia }}</td>
+          <td>{{ sach.namXuatBan }}</td>
+          <td>{{ sach.theLoai }}</td>
+          <td>{{ sach.soLuong }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="sachList.length === 0">
+    <p>Không có sách để hiển thị.</p>
+  </div>
+  

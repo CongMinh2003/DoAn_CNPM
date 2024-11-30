@@ -1,0 +1,32 @@
+
+<div class="titlee">
+  <!-- <h1>Quản lý thư viện</h1> -->
+  <!-- <p>Chào mừng bạn đến với hệ thống quản lý thư viện</p> -->
+</div>
+<mat-toolbar color="primary" class="nav-height">
+    <mat-toolbar-row>
+        <button mat-icon-button>
+            <mat-icon (click)="openLeftSide()" style="width: 100px;" >
+              <!-- routerLink="/Home" -->
+              Menu</mat-icon>
+        </button>
+        <span class="menu-spacer" style="width: 100px;"></span>     
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" [opened]="isOpend" (closed)="closeLeftSide()">
+      <mat-nav-list>
+        <a mat-list-item [routerLink]="['Home']" (click)="sidenav.toggle()">• Trang chủ</a>
+        <a mat-list-item [routerLink]="['Sach']" (click)="sidenav.toggle()">• Quản lý sách</a>
+        <a mat-list-item [routerLink]="['MemberTV']" (click)="sidenav.toggle()">• Quản lý thành viên</a>
+        <a mat-list-item [routerLink]="['Report']" (click)="sidenav.toggle()">• Báo cáo</a>
+        <a mat-list-item (click)="sidenav.toggle()">
+          <mat-icon></mat-icon>• Close
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

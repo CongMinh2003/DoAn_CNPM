@@ -1,0 +1,17 @@
+<div class="container">
+    <form (ngSubmit)="onSubmit()" id="loginForm">
+        <h2 id="titleForm">Đăng nhập</h2>
+
+        <div class="form-row">
+            <label for="username"> Tên tài khoản</label>
+            <input type="text" placeholder="Vui lòng nhập tên tài khoản" name="username" id="username" [(ngModel)]="username">
+        </div>
+
+        <div class="form-row">
+            <label for="password"> Mật khẩu</label>
+            <input type="password" placeholder="Vui lòng nhập mật khẩu" name="password" id="password" [(ngModel)]="password">
+        </div>
+
+        <button id="btnLogin" type="submit">Đăng nhập</button>
+    </form>
+</div>

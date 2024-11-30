@@ -1,0 +1,24 @@
+<div>
+    <button routerLink="/MemberTV" >Quay lại</button>
+</div>
+<div class="delete-member-container">
+    <h2>Xóa Thành Viên</h2>
+    <form (ngSubmit)="onDelete()" #deleteMemberForm="ngForm">
+      <div class="form-group">
+        <label for="tenThanhVien">Tên Thành Viên:</label>
+        <input
+          type="text"
+          id="tenThanhVien"
+          name="tenThanhVien"
+          class="form-control"
+          [(ngModel)]="tenThanhVien"
+          required
+        />
+      </div>
+  
+      <div class="btn">
+        <button type="submit" class="btn btn-danger">Xóa Thành Viên</button>
+      </div>
+    </form>
+  </div>
+  

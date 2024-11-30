@@ -1,0 +1,32 @@
+<div class="container">
+    <h2>Danh sách mượn sách</h2>
+    <div class="search-bar">
+      <input 
+        type="text" 
+        [(ngModel)]="searchQuery" 
+        placeholder="Nhập tên thành viên" 
+        (input)="searchMember()" />
+      <button (click)="searchMember()">Tìm kiếm</button>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Tên thành viên</th>
+          <th>Id sách</th>
+          <th>Ngày mượn</th>
+          <th>Ngày trả dự kiến</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of danhSachMuonSach">
+          <td>{{ item.thanhVienId }}</td>
+          <td>{{ item.tenThanhVien }}</td>
+          <td>{{ item.sachId }}</td>
+          <td>{{ item.ngayMuon | date }}</td>
+          <td>{{ item.ngayTraDuKien | date }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

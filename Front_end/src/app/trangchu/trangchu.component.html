@@ -1,0 +1,28 @@
+<div class="container">
+    <!-- <header class="header">
+      <h1>{{ title }}</h1>
+      <p>{{ description }}</p>
+    </header> -->
+  
+    <nav class="navbar">
+      <ul>
+        <li><a routerLink="/Sach">Quản lý sách</a></li>
+        <li><a routerLink="/MemberTV">Quản lý thành viên</a></li>
+        <!-- <li><a routerLink="/loans">Mượn sách</a></li> -->
+        <li><a routerLink="/Report">Báo cáo</a></li>
+      </ul>
+    </nav>
+  
+    <section class="book-list">
+      <h2>Sách Nổi Bật</h2>
+      <ul>
+        <li *ngFor="let book of books"
+        >
+          <h3>{{ book.title }}</h3>
+          <p>Tác giả: {{ book.author }}</p>
+          <p>Năm xuất bản: {{ book.year }}</p>
+        </li>
+      </ul>
+    </section>
+  </div>
+  

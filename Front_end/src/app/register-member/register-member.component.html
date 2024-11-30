@@ -1,0 +1,29 @@
+<div>
+  <button routerLink="/MemberTV" >Quay lại</button>
+</div>
+<div class="container">
+    <h2>Đăng Ký Thành Viên</h2>
+    <form (ngSubmit)="onSubmit()" [formGroup]="memberForm">
+      <div class="form-group">
+        <label for="tenThanhVien">Tên Thành Viên</label>
+        <input id="tenThanhVien" formControlName="tenThanhVien" type="text" class="form-control" />
+      </div>
+  
+      <div class="form-group">
+        <label for="diaChi">Địa Chỉ</label>
+        <input id="diaChi" formControlName="diaChi" type="text" class="form-control" />
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" formControlName="email" type="email" class="form-control" />
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="memberForm.invalid">Đăng Ký</button>
+    </form>
+  
+    <div *ngIf="message" class="mt-3 alert" [ngClass]="{'alert-success': message === 'Đăng ký thành viên thành công!', 'alert-danger': message !== 'Đăng ký thành viên thành công!'}">
+      {{ message }}
+    </div>
+  </div>
+  

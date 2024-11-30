@@ -1,0 +1,51 @@
+<div class="container">
+    <h2>Tạo Báo Cáo</h2>
+    <!-- <form  #baoCaoForm="ngForm"> -->
+      <form #baoCaoForm="ngForm" (ngSubmit)="createReport(baoCaoForm)">
+
+      <div class="form-group">
+        <label for="thanhVienId">Tiêu Đề Báo Cáo</label>
+        <input
+          type="text"
+          id="tieuDe"
+          name="tieuDe"
+          class="form-control"
+          required
+        />
+        <!-- <div *ngIf="thanhVienId.invalid && (thanhVienId.dirty || thanhVienId.touched)" class="alert">
+          Thành viên ID là bắt buộc.
+        </div> -->
+      </div>
+
+      <div class="form-group">
+        <label for="ngayBaoCao">Ngày Báo Cáo</label>
+        <input
+          type="date"
+          id="ngayBaoCao"
+          name="ngayBaoCao"
+          class="form-control"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="noiDung">Nội Dung</label>
+        <textarea
+          id="noiDung"
+          name="noiDung"
+          class="form-control"
+          rows="5"
+          required      
+        ></textarea>
+        <!-- <div *ngIf="noiDung.invalid && (noiDung.dirty || noiDung.touched)" class="alert">
+          Nội dung báo cáo là bắt buộc.
+        </div> -->
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="baoCaoForm.invalid">Tạo Báo Cáo</button>
+      <!-- <button type="submit" class="btn btn-primary" [disabled]="baoCaoForm.invalid">Xuất Báo Cáo</button> -->
+    </form>
+    <div>
+        <h3>Nội dung báo cáo</h3>
+    </div>
+  </div>
+  

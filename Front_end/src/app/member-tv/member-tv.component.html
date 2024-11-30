@@ -1,0 +1,41 @@
+<div class="container">
+    <h1>Danh Sách Thành Viên</h1>
+    <div>
+      <button routerLink="/Register-member" >Thêm thành viên</button>
+      <button routerLink="/Xoathanhvien" >Xóa thành viên</button>
+      <button routerLink="/Capnhatthongtinthanhvien" >Cập nhật thông tin</button>
+    </div>
+    <!-- <div class="search-bar">
+      <input type="text" placeholder="Nhập tên sách" />
+      <button>Tìm kiếm</button>
+    </div> -->
+    <div class="search-bar">
+      <input type="text" [(ngModel)]="searchName" placeholder="Nhập tên thành viên" />
+      <button (click)="searchMembers()">Tìm kiếm</button>
+    </div>    
+    <div *ngIf="message" class="alert alert-danger">
+      {{ message }}
+    </div>
+  
+    <table class="table table-bordered" *ngIf="members.length > 0">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Tên Thành Viên</th>
+          <th>Địa Chỉ</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let member of members">
+          <td>{{ member.thanhVienId }}</td>
+          <td>{{ member.tenThanhVien }}</td>
+          <td>{{ member.diaChi }}</td>
+          <td>{{ member.email }}</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <p *ngIf="members.length === 0">Không có thành viên nào.</p>
+  </div>
+  

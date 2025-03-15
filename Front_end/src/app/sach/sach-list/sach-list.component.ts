@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Sach } from '../models/sach.model';
-import { SachService } from '../service/sach.service';
+import { Sach } from '../../models/sach.model';
+import { SachService } from '../../service/sach.service';
 
 @Component({
   selector: 'app-sach-list',

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MemberTVService } from '../service/member-tv.service';
+import { MemberTVService } from '../../service/member-tv.service';
 
 @Component({
   selector: 'app-member-tv',

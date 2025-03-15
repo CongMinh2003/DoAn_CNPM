@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
 
@@ -31,7 +32,6 @@ export class LoginComponent {
         error: (error) => {
           alert('Sai tài khoản hoặc mật khẩu');
           console.error('Error logging in', error);
-          // alert('Invalid username or password');
         }
       });
   }

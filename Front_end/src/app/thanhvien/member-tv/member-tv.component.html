@@ -5,10 +5,6 @@
       <button routerLink="/Xoathanhvien" >Xóa thành viên</button>
       <button routerLink="/Capnhatthongtinthanhvien" >Cập nhật thông tin</button>
     </div>
-    <!-- <div class="search-bar">
-      <input type="text" placeholder="Nhập tên sách" />
-      <button>Tìm kiếm</button>
-    </div> -->
     <div class="search-bar">
       <input type="text" [(ngModel)]="searchName" placeholder="Nhập tên thành viên" />
       <button (click)="searchMembers()">Tìm kiếm</button>

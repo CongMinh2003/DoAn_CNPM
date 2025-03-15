@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { BaocaoService } from '../service/baocao.service';
 import { NgForm } from '@angular/forms';
+import { BaoCao } from '../models/baocao';
 
 @Component({
   selector: 'app-report',
@@ -9,16 +10,21 @@ import { NgForm } from '@angular/forms';
 })
 export class ReportComponent {
   constructor(private baoCaoService: BaocaoService) {}
-
   createReport(form: NgForm): void {
     if (form.valid) {
       const baoCao = form.value;
-      this.baoCaoService.createReport(baoCao).subscribe(response => {
-        alert('Báo cáo đã được tạo thành công!');
-        form.reset();
-      }, error => {
-        alert('Có lỗi xảy ra khi tạo báo cáo.');
-      });
+      this.baoCaoService.createReport(baoCao).subscribe(
+        response => {
+          alert(response.message);
+          form.reset();
+        },
+        error => {
+          alert('Có lỗi xảy ra khi tạo báo cáo.');
+          console.error(error);
+        }
+      );
     }
   }
+  
+
 }

@@ -64,6 +64,7 @@
   }
 
   button:hover {
+    background-color: #0056b3;
     cursor: pointer;
   }
   .btn-ds button {
@@ -76,5 +77,10 @@
     margin:right;
     font-size: 16px;
     margin-left: 1250px;
+  }
+
+  .btn-ds button:hover{
+    background-color: #0056b3;
+    cursor: pointer;
   }
   

@@ -13,9 +13,7 @@ public interface SachRepository extends JpaRepository<Sach, Integer> {
     boolean existsByTenSach(String tenSach);
     
     List<Sach> findByTenSachContainingIgnoreCase(String name);
-
+    
     List<Sach> findByTenSach(String tenSach);
-
-    // List<Sach> findByTenSach(String tenSach);
 
 }

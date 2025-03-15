@@ -13,20 +13,9 @@ public class TaiKhoanService {
 
     public boolean authenticate(String tenTK, String matKhau) {
         TaiKhoan taiKhoan = taiKhoanRepository.findByTenTK(tenTK);
-        System.out.println("TaiKhoan: " + taiKhoan.getTenTK());
-        {
-            System.out.println("Mat khau tu DB: " + taiKhoan.getMatKhau());
-            return taiKhoan.getMatKhau().equals(matKhau);
+        if (taiKhoan == null) {
+            return false;
         }
-    } // return false;
-    
-    public boolean checkAccountExists(String tenTK) {
-        TaiKhoan taiKhoan = taiKhoanRepository.findByTenTK(tenTK);
-        return taiKhoan != null;
-    }
-
-    public void saveTaiKhoan(TaiKhoan taiKhoan) {
-        taiKhoanRepository.save(taiKhoan);
-    }
-
+            return taiKhoan.getMatKhau().equals(matKhau);
+    } 
 }

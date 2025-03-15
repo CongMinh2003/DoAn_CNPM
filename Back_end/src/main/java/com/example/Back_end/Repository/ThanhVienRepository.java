@@ -11,6 +11,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ThanhVienRepository extends JpaRepository<ThanhVienTV, Integer> {
     List<ThanhVienTV> findByTenThanhVienContainingIgnoreCase(String name);
-    // Optional<ThanhVienTV> findByName(String tenThanhVien);
     Optional<ThanhVienTV> findByTenThanhVien(String tenThanhVien);
 }

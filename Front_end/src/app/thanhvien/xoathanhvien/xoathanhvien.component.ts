@@ -12,28 +12,11 @@ export class XoathanhvienComponent {
 
   constructor(private memberService: MemberTVService) {}
 
-  // onDelete(): void {
-  //   if (this.tenThanhVien.trim()) {
-  //     this.memberService.deleteMemberByName(this.tenThanhVien).subscribe({
-  //       next: () => {
-  //         alert('Thành viên đã được xóa thành công!');
-  //         this.tenThanhVien = ''; 
-  //       },
-  //       error: (err: any) => {
-  //         console.error(err);
-  //         alert('Không tìm thấy thành viên hoặc xảy ra lỗi!');
-  //       },
-  //     });
-  //   } else {
-  //     alert('Vui lòng nhập tên thành viên!');
-  //   }
-  // }
-
   onDelete(): void {
     if (this.tenThanhVien.trim()) {
       this.memberService.deleteMemberByName(this.tenThanhVien).subscribe({
         next: (response: any) => {
-          alert(response.message); // Hiển thị thông điệp từ JSON phản hồi
+          alert(response.message); 
           this.tenThanhVien = ''; 
         },
         error: (err: any) => {

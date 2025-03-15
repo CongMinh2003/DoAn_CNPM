@@ -1,46 +1,3 @@
-//   import { NgModule } from '@angular/core';
-//   import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-
-//   import { AppRoutingModule } from './app-routing.module';
-//   import { AppComponent } from './app.component';
-//   import { LoginComponent } from './login/login.component';
-//   import { RegisterComponent } from './register/register.component';
-//   import { TrangchuComponent } from './trangchu/trangchu.component';
-//   import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-//   import { HttpClientModule, provideHttpClient } from '@angular/common/http';
-// import { RegisterMemberComponent } from './register-member/register-member.component';
-// import { MemberTVComponent } from './member-tv/member-tv.component';
-// import { SachListComponent } from './sach-list/sach-list.component';
-// import { ReportComponent } from './report/report.component';
-
-
-//   @NgModule({
-//     declarations: [
-//       AppComponent,
-//       LoginComponent,
-//       RegisterComponent,
-//       TrangchuComponent,
-//       RegisterMemberComponent,
-//       MemberTVComponent,
-//       SachListComponent,
-//       ReportComponent
-//     ],
-//     imports: [
-//       BrowserModule,
-//       // NgModule,
-//       FormsModule,
-//       ReactiveFormsModule,
-//       HttpClientModule,
-//       AppRoutingModule,
-//     ],
-//     providers: [
-//       provideClientHydration(),
-//       provideHttpClient(),
-//     ],
-//     bootstrap: [AppComponent]
-//   })
-//   export class AppModule { }
-
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Thêm module này
@@ -50,11 +7,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
 import { TrangchuComponent } from './trangchu/trangchu.component';
-import { RegisterMemberComponent } from './register-member/register-member.component';
-import { MemberTVComponent } from './member-tv/member-tv.component';
-import { SachListComponent } from './sach-list/sach-list.component';
+import { RegisterMemberComponent } from './thanhvien/register-member/register-member.component';
+import { MemberTVComponent } from './thanhvien/member-tv/member-tv.component';
+import { SachListComponent } from './sach/sach-list/sach-list.component';
 import { ReportComponent } from './report/report.component';
 
 // Import các module Angular Material
@@ -77,7 +33,6 @@ import { DanhsachtrasachComponent } from './sach/danhsachtrasach/danhsachtrasach
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent,
     TrangchuComponent,
     RegisterMemberComponent,
     MemberTVComponent,
@@ -95,12 +50,11 @@ import { DanhsachtrasachComponent } from './sach/danhsachtrasach/danhsachtrasach
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule, // Cần thiết cho Angular Material
+    BrowserAnimationsModule, 
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
-    // Thêm các module Angular Material
     MatToolbarModule,
     MatSidenavModule,
     MatButtonModule,

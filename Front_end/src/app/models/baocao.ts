@@ -1,7 +1,6 @@
 export interface BaoCao {
-    tieuDe: string;
-    thanhVienId: number;
-    ngayBaoCao: string;
-    noiDung: string;
+  tieuDeBaoCao: string;
+  ngayBaoCao: Date;
+  noiDung: string;
   }
   

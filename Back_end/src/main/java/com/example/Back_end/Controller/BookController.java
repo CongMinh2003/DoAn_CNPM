@@ -1,9 +1,7 @@
 package com.example.Back_end.Controller;
 
 import com.example.Back_end.Model.Sach;
-// import com.example.Back_end.Model.ThongTinMuonSach;
 import com.example.Back_end.Service.SachService;
-// import com.example.Back_end.Service.ThongTinMuonSachService;
 
 import java.util.HashMap;
 import java.util.List;
@@ -29,7 +27,6 @@ public class BookController {
 
     @Autowired
     private SachService sachService;
-    //  private ThongTinMuonSachService thongTinMuonSachService;
 
     @GetMapping("/all")
     public List<Sach> getAllSach() {

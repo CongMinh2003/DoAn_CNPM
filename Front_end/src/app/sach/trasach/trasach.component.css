@@ -39,6 +39,7 @@
   }
 
   button:hover {
+    background-color: #0056b3;
     cursor: pointer;
   }
 
@@ -52,7 +53,8 @@
     border: none;
   }
 
-  .btn-ds:hover {
+  .btn-ds button:hover {
+    background-color: #0056b3;
     cursor: pointer;
   }
   

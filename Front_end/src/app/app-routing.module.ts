@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
 import { TrangchuComponent } from './trangchu/trangchu.component';
-import { RegisterMemberComponent } from './register-member/register-member.component';
-import { MemberTVComponent } from './member-tv/member-tv.component';
-import { SachListComponent } from './sach-list/sach-list.component';
+import { RegisterMemberComponent } from './thanhvien/register-member/register-member.component';
+import { MemberTVComponent } from './thanhvien/member-tv/member-tv.component';
+import { SachListComponent } from './sach/sach-list/sach-list.component';
 import { ReportComponent } from './report/report.component';
 import { ThemsachComponent } from './sach/themsach/themsach.component';
 import { XoasachComponent } from './sach/xoasach/xoasach.component';
@@ -26,9 +25,6 @@ const routes: Routes = [
   },
   { 
     path : 'Login',component : LoginComponent
-  },
-  { 
-    path : 'Register',component : RegisterComponent
   },
   { 
     path : 'Register-member',component : RegisterMemberComponent

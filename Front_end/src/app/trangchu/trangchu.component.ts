@@ -10,8 +10,8 @@ export class TrangchuComponent {
   description = 'Chào mừng bạn đến với hệ thống quản lý thư viện.';
 
   books = [
-    { id: 1, title: 'Sách 1', author: 'Tác giả 1', year: 2020 },
-    { id: 2, title: 'Sách 2', author: 'Tác giả 2', year: 2021 },
-    { id: 3, title: 'Sách 3', author: 'Tác giả 3', year: 2022 },
+    { id: 1, title: 'Vang danh nghề cổ', author: 'Kim Đồng', year: 2020 },
+    { id: 2, title: 'Chuyện hay sử Việt', author: 'Kim Đồng', year: 2021 },
+    { id: 3, title: 'Nếu tất cả những gì tôi có là ngôn từ', author: 'Kim Đồng', year: 2022 },
   ];
 }

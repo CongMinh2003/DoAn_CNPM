@@ -12,7 +12,8 @@ export class BaocaoService {
 
   constructor(private http: HttpClient) {}
 
-  createReport(baoCao: BaoCao): Observable<string> {
-    return this.http.post<string>(this.apiUrl, baoCao);
+  createReport(baoCao: BaoCao): Observable<{ message: string }> {
+    return this.http.post<{ message: string }>(this.apiUrl, baoCao);
   }
+  
 }

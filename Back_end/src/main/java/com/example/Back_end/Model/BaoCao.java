@@ -11,20 +11,20 @@ public class BaoCao {
     @Column(name = "baoCaoId")
     private Integer baoCaoId;
 
-    @Column(name = "thanhVienId")
-    private Integer thanhVienId;
+    @Column(name = "tieuDeBaoCao", nullable = false, length = 100)
+    private String tieuDeBaoCao;
 
     @Column(name = "ngayBaoCao")
     @Temporal(TemporalType.DATE)
     private Date ngayBaoCao;
 
-    @Column(name = "noiDung")
+    @Column(name = "noiDung", columnDefinition = "TEXT")
     private String noiDung;
 
     public BaoCao() {}
 
-    public BaoCao(Integer thanhVienId, Date ngayBaoCao, String noiDung) {
-        this.thanhVienId = thanhVienId;
+    public BaoCao(String tieuDeBaoCao, Date ngayBaoCao, String noiDung) {
+        this.tieuDeBaoCao = tieuDeBaoCao;
         this.ngayBaoCao = ngayBaoCao;
         this.noiDung = noiDung;
     }
@@ -37,12 +37,12 @@ public class BaoCao {
         this.baoCaoId = baoCaoId;
     }
 
-    public Integer getThanhVienId() {
-        return thanhVienId;
+    public String getTieuDeBaoCao() {
+        return tieuDeBaoCao;
     }
 
-    public void setThanhVienId(Integer thanhVienId) {
-        this.thanhVienId = thanhVienId;
+    public void setTieuDeBaoCao(String tieuDeBaoCao) {
+        this.tieuDeBaoCao = tieuDeBaoCao;
     }
 
     public Date getNgayBaoCao() {

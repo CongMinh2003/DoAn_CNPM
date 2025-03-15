@@ -1,22 +1,26 @@
-<div class="container">
+   <div class="container">
     <h2>Tạo Báo Cáo</h2>
-    <!-- <form  #baoCaoForm="ngForm"> -->
-      <form #baoCaoForm="ngForm" (ngSubmit)="createReport(baoCaoForm)">
+    <form #baoCaoForm="ngForm" (ngSubmit)="createReport(baoCaoForm)" novalidate>
 
       <div class="form-group">
-        <label for="thanhVienId">Tiêu Đề Báo Cáo</label>
+        <label for="tieuDeBaoCao">Tiêu Đề Báo Cáo</label>
         <input
           type="text"
-          id="tieuDe"
-          name="tieuDe"
+          id="tieuDeBaoCao"
+          name="tieuDeBaoCao"
           class="form-control"
           required
+          #tieuDeBaoCao="ngModel"
+          ngModel
         />
-        <!-- <div *ngIf="thanhVienId.invalid && (thanhVienId.dirty || thanhVienId.touched)" class="alert">
-          Thành viên ID là bắt buộc.
-        </div> -->
+        <div
+          *ngIf="tieuDeBaoCao.invalid && (tieuDeBaoCao.dirty || tieuDeBaoCao.touched)"
+          class="alert alert-danger"
+        >
+          Tiêu đề báo cáo là bắt buộc.
+        </div>
       </div>
-
+  
       <div class="form-group">
         <label for="ngayBaoCao">Ngày Báo Cáo</label>
         <input
@@ -24,7 +28,15 @@
           id="ngayBaoCao"
           name="ngayBaoCao"
           class="form-control"
+          #ngayBaoCao="ngModel"
+          ngModel
         />
+        <div
+          *ngIf="ngayBaoCao.invalid && (ngayBaoCao.dirty || ngayBaoCao.touched)"
+          class="alert alert-danger"
+        >
+          Ngày báo cáo không hợp lệ.
+        </div>
       </div>
   
       <div class="form-group">
@@ -34,18 +46,24 @@
           name="noiDung"
           class="form-control"
           rows="5"
-          required      
+          required
+          #noiDung="ngModel"
+          ngModel
         ></textarea>
-        <!-- <div *ngIf="noiDung.invalid && (noiDung.dirty || noiDung.touched)" class="alert">
+        <div
+          *ngIf="noiDung.invalid && (noiDung.dirty || noiDung.touched)"
+          class="alert alert-danger"
+        >
           Nội dung báo cáo là bắt buộc.
-        </div> -->
+        </div>
       </div>
   
-      <button type="submit" class="btn btn-primary" [disabled]="baoCaoForm.invalid">Tạo Báo Cáo</button>
-      <!-- <button type="submit" class="btn btn-primary" [disabled]="baoCaoForm.invalid">Xuất Báo Cáo</button> -->
+      <button type="submit" class="btn btn-primary">
+        Tạo Báo Cáo
+      </button>
     </form>
     <div>
-        <h3>Nội dung báo cáo</h3>
+      <h3>Nội dung báo cáo</h3>
     </div>
   </div>
   
